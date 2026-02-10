@@ -1,3 +1,5 @@
+//EXO 2.1
+
 <?php
 
 
@@ -44,4 +46,53 @@ $equipements = [2, 4, 6, 8, 3];
 
 print_r(analyserParc($equipements));
 
+?>
+
+
+
+
+
+
+//EXO 2.2
+<?php
+
+// 1. Filtrer les machines par type
+function filtrerParType($machines, $typeRecherche){
+    $resultat = [];
+
+    foreach($machines as $machine){
+        if($machine['type'] === $typeRecherche){
+            $resultat[] = $machine;
+        }
+    }
+
+    return $resultat;
+}
+
+// 2. Trouver une machine par IP
+function trouverParIP($machines, $ip){
+    foreach($machines as $machine){
+        if($machine['ip'] === $ip){
+            return $machine;
+        }
+    }
+    return null; // pas trouvé
+}
+
+// 3. Compter les machines par type
+function compterParType($machines){
+    $compte = [];
+
+    foreach($machines as $machine){
+        $type = $machine['type'];
+        if(!isset($compte[$type])){
+            $compte[$type] = 0;
+        }
+        $compte[$type]++;
+    }
+
+    return $compte;
+}
+
+?>
 
