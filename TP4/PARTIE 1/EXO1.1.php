@@ -36,21 +36,23 @@ function genererCodeInventaire($type, $numero) {
 
 
 //5
-echo "===Tests===\n";
+echo "<pre>"; // garde l'alignement
 
-//TEST AGE
-echo calculerAgeEquipement(2020) . "\n";
+echo "===== TEST AGE =====\n";
+echo calculerAgeEquipement(2020) . "\n\n";
 
-//TEST GARANTIE
+echo "===== TEST GARANTIE =====\n";
 echo calculerFinGarantie("2021-05-10") . "\n";
-echo calculerFinGarantie("2019-03-15", 5) . "\n";
+echo calculerFinGarantie("2019-03-15", 5) . "\n\n";
 
-//TEST OBSOLTE
+echo "===== TEST OBSOLETE =====\n";
 echo estObsolete(6) . "\n";
-echo estObsolete(3) . "\n";
+echo estObsolete(3) . "\n\n";
 
-//TEST INVENTAIRE
+echo "===== TEST INVENTAIRE =====\n";
 echo genererCodeInventaire("serveur", 1) . "\n";
 echo genererCodeInventaire("workstation", 2) . "\n";
 echo genererCodeInventaire("network", 3) . "\n";
 echo genererCodeInventaire("autre", 4) . "\n";
+
+echo "</pre>";
